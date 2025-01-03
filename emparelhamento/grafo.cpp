@@ -1,16 +1,15 @@
 #include "grafo.h"
 #include <fstream>
 #include <iostream>
-#include <vector>
-#include <string>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 Grafo::Grafo(int vertices) : v(vertices), adj(vertices+1) {}
 
 void Grafo::adicionarAresta(int u, int v) {
-    adj[u].push_back(v);  // Adiciona v à lista de adjacências de u
-    adj[v].push_back(u);  // Se o grafo for não direcionado, adiciona u à lista de adjacências de v
+    adj[u-1].push_back(v-1);  // Adiciona v à lista de adjacências de u
+    adj[v-1].push_back(u-1);  // Se o grafo for não direcionado, adiciona u à lista de adjacências de v
 }
 
 Grafo lerGrafo(const std::string& nomeArquivo) {

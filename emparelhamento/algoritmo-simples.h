@@ -4,6 +4,6 @@
 #include "grafo.h"
 #include <vector>
 
-std::vector<std::vector<int>> encontraEmparelhamentoMaximo(Grafo g);
+std::vector<int> encontraEmparelhamentoMaximo(Grafo g);
 
 #endif // ALGORITMOSIMPLES_H
