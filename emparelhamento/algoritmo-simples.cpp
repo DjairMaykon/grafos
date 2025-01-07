@@ -1,13 +1,13 @@
 #include "algoritmo-simples.h"
 #include "grafo.h"
-#include <bits/stdc++.h>
+#include <vector>
+#include <numeric>
 
 using namespace std;
 
 bool achaCaminhoAumento(Grafo g, vector<int> &m, int v, vector<bool> seen = vector<bool>()) {
     if (seen.empty()) {
         seen = vector<bool>(g.v, false);
-        // memset(seen, false, sizeof seen);
     }
     for (int u : g.adj[v]) {
         if (seen[u]) continue;
@@ -21,7 +21,7 @@ bool achaCaminhoAumento(Grafo g, vector<int> &m, int v, vector<bool> seen = vect
     return false;
 }
 
-vector<int> encontraEmparelhamentoMaximo(Grafo g) {
+vector<int> algoritmoSimples(Grafo g) {
     vector<int> m(g.v);
     iota(m.begin(), m.end(), 0);
 
